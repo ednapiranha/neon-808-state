@@ -1,0 +1,147 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background: repeating-linear-gradient(
+    -45deg,
+    #b06edd,
+    #b06edd,
+    #ff00af 10%,
+    #fff 5%
+  );
+  background-attachment: fixed;
+  transition: all 2s ease-in-out;
+}
+
+#back1, #back2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+body.switch-off #back1 {
+  background: repeating-linear-gradient(
+    -45deg,
+    #b06edd,
+    #b06edd,
+    #ff00af 1%,
+    #ff00af 10%,
+    #cf0062 1%
+  );
+  opacity: 1;
+  transition: all 2s ease-in-out;
+}
+
+#back2 {
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+
+body.switch #back1 {
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+
+body.switch #back2 {
+  background: repeating-linear-gradient(
+    -45deg,
+    #cf0062,
+    #ff00af,
+    #ff00af 1%,
+    #b06edd 10%,
+    #fff 1%
+  );
+  opacity: 1;
+  transition: all 2s ease-out;
+}
+
+canvas {
+  position: absolute;
+  z-index: 2;
+}
+
+#player {
+  opacity: 0;
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  left: -100px;
+}
+
+img {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  z-index: 4;
+  animation: dance 2s ease-in-out infinite alternate;
+}
+
+@keyframes dance {
+  from {
+    filter: drop-shadow(0 0 10px #fd15be)
+          drop-shadow(0 0 18px #fd15be);
+    -webkit-filter: drop-shadow(0 0 10px #fd15be)
+          drop-shadow(0 0 18px #fd15be);
+  }
+  to {
+    filter: drop-shadow(0 0 2px #fff)
+          drop-shadow(0 0 3px #fff)
+          drop-shadow(0 0 15px #fff)
+          drop-shadow(0 0 20px #fff);
+    -webkit-filter: drop-shadow(0 0 2px #fff)
+          drop-shadow(0 0 3px #fff)
+          drop-shadow(0 0 15px #fff)
+          drop-shadow(0 0 20px #fff);
+  }
+}
